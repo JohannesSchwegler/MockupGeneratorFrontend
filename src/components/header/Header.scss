@@ -1,0 +1,96 @@
+@import "~styles/config";
+
+.header {
+  display: block;
+  background-color:  #1d3893;
+  &__container {
+    @include container;
+    position: relative;
+  }
+
+  &__content {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px 0 ;
+  }
+
+  &__logo {
+    position: absolute;
+    left: $container-gutter-desktop;
+    &Svg {
+      display: block;
+
+      height: 26px;
+      width: auto;
+
+      @media (min-width: $min-768) {
+        height: 38px;
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+
+    li{
+      a{
+        padding: 0 15px;
+      }
+    }
+  }
+  &__cta {
+    position: absolute;
+    right: $container-gutter-desktop;
+    a {
+      vertical-align: baseline;
+      background: transparent;
+      appearance: none;
+
+      display: inline-flex;
+
+      flex-flow: row nowrap;
+
+      align-items: center;
+       box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+      justify-content: space-between;
+      padding: 0 30px;
+      height: 50px;
+      line-height: 48px;
+      white-space: nowrap;
+      color:#1d3893;
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+      opacity: 1;
+      cursor: pointer;
+      background: #fff;
+      border-radius: 1000px;
+      border: 2px solid transparent;
+      transition: border-color 0.25s linear, background-color 0.25s linear;
+      span {
+        display: inline-block;
+      }
+      svg {
+        flex: 0 0 auto;
+        margin-left: 20px;
+
+        transform: rotate(-90deg);
+        fill: #55c9f2 !important;
+        transform-origin: center center;
+      }
+    }
+
+    &:hover{
+      span{
+        transform: translateX(-5px);
+      }
+      svg{
+        transform: translateX(5px) rotate(-90deg);
+      }
+    }
+  }
+}
